@@ -7,6 +7,6 @@ const {
 const rutas = Router()
 
 rutas.get('/', getAlumnoAll)
-rutas.get('/:legajo', getAlumnoById)
+rutas.get('/:id', getAlumnoById)
 
 module.exports = rutas
