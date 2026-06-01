@@ -1,10 +1,10 @@
 const { Router } = require('express')
 const {
-  getProfesorAll,
-  getProfesorById,
-  createProfesor,
-  updateProfesor,
-  deleteProfesor
+getetProfesorAll,
+getProfesorById,
+createProfesor,
+updateProfesor,
+deleteProfesor
 } = require('../../controllers/profesor.controller')
 
 const rutas = Router()

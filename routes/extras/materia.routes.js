@@ -1,10 +1,10 @@
 const { Router } = require('express')
 const {
-  getMateriaAll,
-  getMateriaById,
-  createMateria,
-  updateMateria,
-  deleteMateria
+getMateriaAll,
+getMateriaById,
+createMateria,
+updateMateria,
+deleteMateria
 } = require('../../controllers/materia.controller')
 
 const rutas = Router()
