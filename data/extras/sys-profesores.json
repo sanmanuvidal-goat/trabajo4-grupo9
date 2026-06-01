@@ -1,0 +1,82 @@
+[
+    {
+        "id": 20001,
+        "nombre": "Carlos",
+        "apellido": "Rodríguez",
+        "email": "c.rodriguez@facultad.edu.ar",
+        "fechaAlta": "2024-03-11",
+        "isActive": true
+    },
+    {
+        "id": 20002,
+        "nombre": "Patricia",
+        "apellido": "Fernández",
+        "email": "p.fernandez@facultad.edu.ar",
+        "fechaAlta": "2024-03-11",
+        "isActive": true
+    },
+    {
+        "id": 20003,
+        "nombre": "Alejandro",
+        "apellido": "Gómez",
+        "email": "a.gomez@facultad.edu.ar",
+        "fechaAlta": "2024-08-05",
+        "isActive": true
+    },
+    {
+        "id": 20004,
+        "nombre": "Mariana",
+        "apellido": "López",
+        "email": "m.lopez@facultad.edu.ar",
+        "fechaAlta": "2025-03-01",
+        "isActive": true
+    },
+    {
+        "id": 20005,
+        "nombre": "Ricardo",
+        "apellido": "Sánchez",
+        "email": "r.sanchez@facultad.edu.ar",
+        "fechaAlta": "2023-08-12",
+        "isActive": true
+    },
+    {
+        "id": 20006,
+        "nombre": "Silvia",
+        "apellido": "Martínez",
+        "email": "s.martinez@facultad.edu.ar",
+        "fechaAlta": "2025-03-10",
+        "isActive": true
+    },
+    {
+        "id": 20007,
+        "nombre": "Gustavo",
+        "apellido": "Díaz",
+        "email": "g.diaz@facultad.edu.ar",
+        "fechaAlta": "2022-03-15",
+        "isActive": false
+    },
+    {
+        "id": 20008,
+        "nombre": "Andrea",
+        "apellido": "Pérez",
+        "email": "a.perez@facultad.edu.ar",
+        "fechaAlta": "2025-08-04",
+        "isActive": true
+    },
+    {
+        "id": 20009,
+        "nombre": "Marcelo",
+        "apellido": "Alvarez",
+        "email": "m.alvarez@facultad.edu.ar",
+        "fechaAlta": "2024-03-11",
+        "isActive": true
+    },
+    {
+        "id": 20010,
+        "nombre": "Beatriz",
+        "apellido": "Romero",
+        "email": "b.romero@facultad.edu.ar",
+        "fechaAlta": "2026-03-02",
+        "isActive": true
+    }
+]
