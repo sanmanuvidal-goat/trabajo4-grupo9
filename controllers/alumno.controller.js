@@ -7,7 +7,7 @@ const { AlumnoModel } = require('../models/alumno.model');
  */
 const getAlumnoAll = async (req, res) => {
   try {
-    const alumnos = AlumnoModel.getAllRaw();
+    const alumnos = await AlumnoModel.getAllRaw();
     return res.status(200).json(alumnos);
   } catch (error) {
     console.error(error);
@@ -22,7 +22,7 @@ const getAlumnoAll = async (req, res) => {
 const getAlumnoById = async (req, res) => {
   try {
     const { id } = req.params;
-    const alumnos = AlumnoModel.getAllRaw();
+    const alumnos = await AlumnoModel.getAllRaw();
     
     const alumnoEncontrado = alumnos.find(a => a.legajo === Number(id));
 
@@ -50,7 +50,7 @@ const createAlumno = async (req, res) => {
       return res.status(400).json({ error: 'Todos los campos (legajo, nombre, apellido, email) son obligatorios' });
     }
 
-    const alumnos = AlumnoModel.getAllRaw();
+    const alumnos = await AlumnoModel.getAllRaw();
 
     // Validar si el legajo ya existe (HTTP 409 Conflict)
     const existeLegajo = alumnos.some(a => a.legajo === Number(legajo));
@@ -80,7 +80,7 @@ const createAlumno = async (req, res) => {
       isActive: nuevoAlumnoInstancia.isActive
     });
 
-    AlumnoModel.saveAll(alumnos);
+    await AlumnoModel.saveAll(alumnos);
     return res.status(201).json({ msg: 'Alumno registrado con éxito', alumno: nuevoAlumnoInstancia });
 
   } catch (error) {
@@ -98,7 +98,7 @@ const updateAlumno = async (req, res) => {
     const { id } = req.params;
     const { nombre, apellido, email, isActive } = req.body;
     
-    const alumnos = AlumnoModel.getAllRaw();
+    const alumnos = await AlumnoModel.getAllRaw();
     const indice = alumnos.findIndex(a => a.legajo === Number(id));
 
     if (indice === -1) {
@@ -113,7 +113,7 @@ const updateAlumno = async (req, res) => {
     
     alumnos[indice].modificacion = new Date().toISOString().split('T')[0];
 
-    AlumnoModel.saveAll(alumnos);
+    await AlumnoModel.saveAll(alumnos);
     return res.status(200).json({ msg: 'Datos actualizados con éxito', alumno: alumnos[indice] });
 
   } catch (error) {
@@ -129,7 +129,7 @@ const updateAlumno = async (req, res) => {
 const deleteAlumno = async (req, res) => {
   try {
     const { id } = req.params;
-    let alumnos = AlumnoModel.getAllRaw();
+    let alumnos = await AlumnoModel.getAllRaw();
     
     const existe = alumnos.some(a => a.legajo === Number(id));
     if (!existe) {
@@ -139,7 +139,7 @@ const deleteAlumno = async (req, res) => {
     // Filtramos para remover por completo al estudiante del array
     alumnos = alumnos.filter(a => a.legajo !== Number(id));
     
-    AlumnoModel.saveAll(alumnos);
+    await AlumnoModel.saveAll(alumnos);
     return res.status(200).json({ msg: `Alumno con legajo ${id} eliminado correctamente` });
 
   } catch (error) {
