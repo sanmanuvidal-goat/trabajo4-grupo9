@@ -12,9 +12,9 @@
 
 **Enlaces**:
 
-- Link del deploy en Render: [Inserta aquí el enlace público de tu API]
-- Link al repositorio con el front-end:\*\* [Inserta aquí el enlace al repositorio de GitHub de tu front-end]
-- Documentación con Postman: [Inserta aquí el link público a tu colección de Postman con los métodos GET, PUT, DELETE, POST]
+- Link del deploy en Render:
+- Link al repositorio con el front-end:
+- Documentación con Postman:
 
 **Metologia y Organizacion**
 
@@ -30,17 +30,17 @@ Usamos Github Descktop con una rama principal 'main', una rama 'dev' para prueba
 
 **Distribución de los archivos y carpetas**
 
-**models**: Contiene los esquemas de datos y clases desarrolladas en TypeScript. Su función principal es aplicar Programación Orientada a Objetos para modelar las entidades (ej. AlumnoModel) y validar estrictamente los datos que ingresan a la API antes de guardarlos.
+**models**: Contiene los esquemas de datos y clases desarrolladas en TypeScript. Su función principal es aplicar Programación Orientada a Objetos para modelar las entidades (ej. Alumno.model.ts) y validar estrictamente los datos que ingresan a la API antes de guardarlos.
 
-**controllers**: Aloja la lógica de negocio escrita en JavaScript. Aquí se encuentran las funciones asíncronas que reciben las peticiones del cliente, instancian los modelos para validar datos, procesan la lectura o escritura y devuelven las respuestas HTTP correspondientes.
+**controllers**: Aloja la lógica de negocio modularizada y escrita en JavaScript (ej. alumno.controller.js y los módulos opcionales dentro de la subcarpeta extras). Destaca el uso del módulo nativo fs.promises para realizar la lectura/escritura de los archivos JSON de forma asíncrona, capturando excepciones mediante bloques try/catch.
 
-**routes**: Contiene los enrutadores en JavaScript. Su responsabilidad es definir los endpoints de la API (métodos GET, POST, PUT, DELETE) y conectar cada ruta específica con su función correspondiente en los controladores.
+**routes**: Contiene los archivos de enrutamiento desarrollados en JavaScript (ej. alumno.routes.js, materia.routes.js, nota.routes.js y profesor.routes.js). Utiliza el módulo Router de Express para modularizar los endpoints de la API. Su responsabilidad principal es interceptar las peticiones HTTP (GET, POST, PUT, DELETE) apuntadas a cada entidad y delegar la ejecución mapeándolas directamente a las funciones importadas desde sus respectivos controladores.
 
-**data**: Actúa como nuestra base de datos simulada. Contiene los archivos JSON (como alumnos.json) estáticos donde se persiste de forma física toda la información del sistema.
+**data**: Actúa como nuestra base de datos simulada gestionando la persistencia de la información mediante archivos JSON. En su nivel principal contiene el archivo alumnos.json, donde se registran los estudiantes. Además, incluye una subcarpeta /extras con documentos adicionales (sys-materias.json, sys-notas.json y sys-profesores.json) provistos como base para desarrollar las ampliaciones opcionales del proyecto..
 
-**core**: Contiene los archivos de configuración central y arranque del proyecto (como app.js o server.js), encargados de inicializar Node.js, Express y levantar el servidor web.
+**core**: Contiene el archivo server.js, donde se define la clase principal Server. Esta clase centraliza toda la configuración de arranque de la API: inicializa Express, configura las variables de entorno (dotenv) y aplica middlewares esenciales como CORS. Además, es responsable de enlazar los endpoints de la aplicación (como la ruta /alumnos) y cuenta con una serie de middlewares dedicados al manejo global de errores, capturando y respondiendo adecuadamente a estados como 400, 404 (Página no encontrada) y 500 (Internal Server Error).
 
-**app.js**: Es el archivo de entrada principal de la aplicación. Se encarga de inicializar Node.js y Express, configurar middlewares, importar las rutas y levantar el servidor.
+**app.js**: : Es el archivo de entrada principal del proyecto. Su única responsabilidad es importar la clase Server desde el core, instanciarla y ejecutar el método
 
 **Documentacion De Funciones**
 
