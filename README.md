@@ -1,12 +1,12 @@
 **Programación III - Tecnicatura Universitaria en Programación**
 
-**Profesor**: Gustavo Ramoscelli
+**Profesor**: Gustavo Ramoscelli.
 
-**Ayudante**: Maria Victoria Ruiz
+**Ayudante**: Maria Victoria Ruiz.
 
-**Grupo**: Grupo 9
+**Grupo**: Grupo 9.
 
-**Integrantes**: Mazzante Bautista, Vidal Santiago, De Rosa Tiago, Tapuerca Thiago y Wilberger Franco
+**Integrantes**: Mazzante Bautista, Vidal Santiago, De Rosa Tiago, Tapuerca Thiago y Wilberger Franco.
 
 **Descripcion**: El objetivo de este proyecto es crear una API REST para reemplazar los datos estáticos de una página. El desarrollo aplica el patrón Modelo-Vista-Controlador (MVC) para separar adecuadamente la lógica de datos de las rutas del servidor. Para lograr esto, utilizamos JavaScript (Node.js y Express) para gestionar la lógica en la capa de los controladores y el enrutamiento de los endpoints. Por otro lado, la validación y el tipado estricto de los datos se manejan a través de clases en TypeScript dentro de la capa de los modelos. Para la persistencia de datos, se gestiona la información mediante la lectura y escritura de archivos JSON, simulando así una base de datos. Finalmente, el proyecto se encuentra "dockerizado" y la API está desplegada públicamente utilizando los servicios web de Render.com.
 
@@ -44,15 +44,15 @@ Usamos Github Descktop con una rama principal 'main', una rama 'dev' para prueba
 
 **Documentacion De Funciones**
 
-**getAllAlumnos (Controlador - GET)**: \* Lógica: Función asíncrona que se encarga de leer el archivo alumnos.json. Utiliza un bloque try/catch para prevenir caídas del servidor. Parsea la información y la devuelve en formato JSON.
+**getAllAlumnos (Controlador - GET)**: Lógica: Función asíncrona que se encarga de leer el archivo alumnos.json. Utiliza un bloque try/catch para prevenir caídas del servidor. Parsea la información y la devuelve en formato JSON.
 
-**getAlumnoById (Controlador - GET)**: \* Lógica: Captura el número de legajo enviado por parámetro en la URL (req.params.id). Lee el archivo JSON de forma asíncrona y utiliza el método .find() para buscar al alumno específico dentro del arreglo.
+**getAlumnoById (Controlador - GET)**: Lógica: Captura el número de legajo enviado por parámetro en la URL (req.params.id). Lee el archivo JSON de forma asíncrona y utiliza el método .find() para buscar al alumno específico dentro del arreglo.
 
-**createAlumno (Controlador - POST)**: \* Lógica: Recibe los datos del nuevo alumno a través del cuerpo de la petición (req.body). Antes de guardarlo, instancia la clase AlumnoModel (desarrollada en TypeScript) para validar que los datos sean correctos. Luego, lee el JSON asíncronamente, verifica que el legajo no esté duplicado, empuja el nuevo objeto al arreglo y reescribe el archivo de texto.
+**createAlumno (Controlador - POST)**: Lógica: Recibe los datos del nuevo alumno a través del cuerpo de la petición (req.body). Antes de guardarlo, instancia la clase AlumnoModel (desarrollada en TypeScript) para validar que los datos sean correctos. Luego, lee el JSON asíncronamente, verifica que el legajo no esté duplicado, empuja el nuevo objeto al arreglo y reescribe el archivo de texto.
 
-**updateAlumno (Controlador - PUT)**: \* Lógica: Recibe el legajo por la URL (req.params.id) y los datos a actualizar por el req.body. Busca el índice del alumno en el JSON. Tiene una validación estricta para evitar que el número de legajo sea modificado. Si pasa la validación, actualiza las propiedades correspondientes y reescribe el archivo JSON asíncronamente.
+**updateAlumno (Controlador - PUT)**: Lógica: Recibe el legajo por la URL (req.params.id) y los datos a actualizar por el req.body. Busca el índice del alumno en el JSON. Tiene una validación estricta para evitar que el número de legajo sea modificado. Si pasa la validación, actualiza las propiedades correspondientes y reescribe el archivo JSON asíncronamente.
 
-**deleteAlumno (Controlador - DELETE)**: \* Lógica: Extrae el legajo desde los parámetros de la URL (req.params.id). Filtra el arreglo del JSON (usualmente con .filter()) para remover por completo al estudiante que coincida con ese legajo. Finalmente, guarda el nuevo arreglo modificado sobrescribiendo el archivo JSON.
+**deleteAlumno (Controlador - DELETE)**: Lógica: Extrae el legajo desde los parámetros de la URL (req.params.id). Filtra el arreglo del JSON (usualmente con .filter()) para remover por completo al estudiante que coincida con ese legajo. Finalmente, guarda el nuevo arreglo modificado sobrescribiendo el archivo JSON.
 
 **Estructura de Archivos JSON**:
 
