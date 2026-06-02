@@ -22,8 +22,8 @@ Usamos Github Descktop con una rama principal 'main', una rama 'dev' para prueba
 
 **Division del trabajo**
 
-- Mazzante Bautista:
-- Vidal Santiago: modifique un poco el alumno.model.ts, hice el alumno.controller.js y modifique server.js dentro de core
+- Mazzante Bautista: docker, tsconfig.json y parte del package.json
+- Vidal Santiago: modifique un poco el alumno.model.ts, hice los 4 controllers y modifique server.js dentro de core
 - De Rosa Tiago: Las rutas y Documentacion
 - Tapuerca Thiago: Creación y prueba de los métodos en Postman, configuración y verificación del deploy en Render y apoyo en las pruebas y corrección de errores.
 - Wilberger Franco: alumno.model.ts,profesor.model.ts,nota.model.ts,clase.model.ts
